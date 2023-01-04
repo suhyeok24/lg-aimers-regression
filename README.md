@@ -112,42 +112,34 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 
 <br/>
 
-**2. Non-destructive transformations (not to add or lose the information)**
-- Flip  
-- Transpose  
-- RandomRotate  
-- ShiftScaleRotate  
+**2. Modeling Methods**
+
+- Using boosting models
+  > GradientBoostingRegressor
+  > XGBRegressor
+  > LGBMRegressor
+  > CatBoostRegressor
+
+- Stacking
+  > 1. Simply averaging the predictions for cloned model :  AveragingModels (best)
+  > 2. Train the cloned meta-model using the out-of-fold predictions as new feature : StackingAveragedModels
+
 
 <br/>
 
-**3. Training Methods**
-- EarlyStopping  
-  > To prevent overfitting  
-  > If validation loss does not improve after given patience(=2), training is earlystopped  
-- Fine-tuning with pre-trained model  
-  > pretrained model : [RRDB_PSNR_x4.pth](https://github.com/xinntao/ESRGAN/tree/master/models)(the PSNR-oriented model with high PSNR performance)  
-  > Retraining entire model : Judging that the similarity between DF2K dataset(pretrained model) and our training datset is small  
+**3. Standardization**
+- StandardScaler(Mean:0, Std:1)
+  > Ignore the units of each characteristic and simply compare them by value 
+
+ 
 
 <br/>
 
-**4. Loss Function**
-- L1 loss + L2 loss (2:1)
-  > L2 loss : PSNR is based on MSE  
-  > L1 loss: For better convergence [https://arxiv.org/pdf/1707.02921v1.pdf](https://arxiv.org/pdf/1707.02921v1.pdf)
-
-<br/>
-
-**5. Learning Scheduler, Optimizer**
-- StepLR  
-  > step_size = 3, gamma = 0.5  
-  > Decays the learning rate of each parameter in half once per 3 epochs 
-- Adam  
-
-<br/>
-
-**6. Post Processing**
-- Geometric Self-Ensemble [https://arxiv.org/pdf/1707.02921v1.pdf](https://arxiv.org/pdf/1707.02921v1.pdf)
-  > <img width="751" alt="KakaoTalk_Photo_2023-01-04-11-58-49" src="https://user-images.githubusercontent.com/55012723/210476203-015eac00-d0e0-4d10-8eb5-a772a9910097.png">
+**4. Hyperparameter Tuning**
+- Optuna : to minimize RMSE
+  > Simple and fast 
+  > Parallel processing is possible
+  > Equipped with various optimization algorithms of the latest trend.
 
 
 <br/><br/> 
