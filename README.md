@@ -23,18 +23,26 @@ Regression을 통한 예측 정확도를 극대화해보자!
 
 **[배경]**  
 Radar는 자율주행 차에 있어 차량과의 거리, 상대 속도, 방향 등을 측정해주는 필수적인 센서 부품 <br/>
-LG에서는 제품의 성능 평가 공정에서 양품과 불량을 선별하고 있습니다.
-그리고 AI 기술을 활용하여 공정 데이터와 제품 성능간 상관 분석을 통해 제품의 불량을 예측/분석하고, 
-수율을 극대화하여 불량으로 인한 제품 폐기 비용을 감축 시키기 위해 노력하고 있습니다.
+LG에서는 제품의 성능 평가 공정에서 양품과 불량을 선별 중. <br/>
+AI 기술을 활용하여 공정 데이터와 제품 성능간 상관 분석을 통해 제품의 불량을 예측/분석하고, 
+수율을 극대화하여 불량으로 인한 제품 폐기 비용을 감축시키는 것이 목표.
 
 
 **[주최]**  
 LG AI Research 
 
 **[평가 산식]**  
-PSNR(Peak Signal-to-Noise Ratio) = $10log_{10}(R^2/MSE)$
--	생성 혹은 압축된 영상의 화질에 대한 “손실 정보”를 평가
--	손실이 적을수록(=화질이 좋을 수록) 높은 값  
+Normalized RMSE (NRMSE)
+> def lg_nrmse(gt, preds):
+    # 각 Y Feature별 NRMSE 총합
+    # Y_01 ~ Y_08 까지 20% 가중치 부여
+    all_nrmse = []
+    for idx in range(1,15): # ignore 'ID'
+        rmse = metrics.mean_squared_error(gt[:,idx], preds[:,idx], squared=False)
+        nrmse = rmse/np.mean(np.abs(gt[:,idx]))
+        all_nrmse.append(nrmse)
+    score = 1.2 * np.sum(all_nrmse[:8]) + 1.0 * np.sum(all_nrmse[8:14])
+    return score
 
 <br/><br/>
 
