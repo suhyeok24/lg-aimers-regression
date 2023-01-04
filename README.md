@@ -34,7 +34,8 @@ LG AI Research
 **[평가 산식]**  
 Normalized RMSE (NRMSE)
 
-'''python
+```python
+
 def lg_nrmse(gt, preds):
     # 각 Y Feature별 NRMSE 총합
     # Y_01 ~ Y_08 까지 20% 가중치 부여
@@ -45,7 +46,8 @@ def lg_nrmse(gt, preds):
         all_nrmse.append(nrmse)
     score = 1.2 * np.sum(all_nrmse[:8]) + 1.0 * np.sum(all_nrmse[8:14])
     return score
-'''
+    
+```
 
 <br/><br/>
 
