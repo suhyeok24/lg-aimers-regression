@@ -20,7 +20,9 @@ Regression을 통한 예측 정확도를 극대화해보자!
 
 
 **[목표]**  
-공정 데이터를 활용하여 Radar 센서의 안테나 성능 예측을 위한 AI 모델 개발 
+공정 데이터를 활용하여 Radar 센서의 안테나 성능 예측을 위한 AI 모델 개발  <br/>
+
+공정 데이터와 제품 성능간 상관 분석을 통해 제품의 불량을 예측/분석
 
 
 **[배경]**  
@@ -28,6 +30,14 @@ Radar는 자율주행 차에 있어 차량과의 거리, 상대 속도, 방향 �
 LG에서는 제품의 성능 평가 공정에서 양품과 불량을 선별 중. <br/>
 AI 기술을 활용하여 공정 데이터와 제품 성능간 상관 분석을 통해 제품의 불량을 예측/분석하고, <br/>
 수율을 극대화하여 불량으로 인한 제품 폐기 비용을 감축시키는 것이 목표.
+
+
+**[데이터]**
+
+-X 변수
+-Y 변수 
+> <img width="381" alt="image" src="https://user-images.githubusercontent.com/55012723/210501843-15250981-b4c3-4567-9889-4f31bfcfb540.png">
+
 
 
 **[주최]**  
@@ -61,16 +71,18 @@ Private : 1.96222(126th)
 <br/><br/>
 
 ## 🌐 Environment
-Colab Pro+  
-GPU: A100-SXM4-40GB * 1(Main) , Tesla T4*1(Sub)
+
+Google Colab
+OS: macOS Ventura 13.0 <br/>
+CPU: Intel(R) Xeon(R) CPU @ 2.20GHz 
 
 <br/><br/>
 
 ## 🔥 Competition Strategies
 
-**1. Patches(for data augmentation)**  
-- Train patches : original 1640 images → 26240(1640*16) patches (X4 downsampling, non-overlapping)  
-- Test patches: original 18 images → 882(18*49) patches (X4 downsampling, overlapping(to remove border artifacts)) 
+**1. Feature Enginnering **  
+- Adding Average SMT column
+- Deleting Validation columns
 
 <br/>
 
