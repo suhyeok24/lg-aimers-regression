@@ -102,14 +102,17 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 
 ## 🔥 Competition Strategies
 
-**1. Feature Enginnering **  
+**1. Feature Enginnering**  
 - Adding Average SMT column
-- Deleting Validation columns
+- Deleting Validation columns : all the same value 
+- Clustering By Process
+  > Identify characteristics of sample data and classify into clusters
+  > Cluster numbers for 4 processes are reflected as features
+  > Using KMeans clustering
 
 <br/>
 
-**2. Data Transform**  
-Non-destructive transformations (not to add or lose the information)
+**2. Non-destructive transformations (not to add or lose the information)**
 - Flip  
 - Transpose  
 - RandomRotate  
