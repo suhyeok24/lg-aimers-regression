@@ -35,8 +35,9 @@ AI 기술을 활용하여 공정 데이터와 제품 성능간 상관 분석을 
 **[데이터]**
 
 -X 변수
+
 -Y 변수 
-> <img width="381" alt="image" src="https://user-images.githubusercontent.com/55012723/210501843-15250981-b4c3-4567-9889-4f31bfcfb540.png">
+ > <img width="200" alt="image" src="https://user-images.githubusercontent.com/55012723/210501843-15250981-b4c3-4567-9889-4f31bfcfb540.png">
 
 
 
