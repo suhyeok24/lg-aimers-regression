@@ -149,7 +149,7 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 
   > Parallel processing is possible
 
-  > Equipped with various optimization algorithms of the latest trend.
+  > Equipped with various optimization algorithms of the latest trend
 
 
 <br/><br/> 
