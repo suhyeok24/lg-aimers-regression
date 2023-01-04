@@ -116,6 +116,8 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 
 **2. Modeling Methods**
 
+- Build a model for each y variable (14 models)
+
 - Using boosting models
   > GradientBoostingRegressor
 
@@ -151,34 +153,4 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 
 
 <br/><br/> 
-
-## Main configuration & Hyperparameters
-'''
-1. Manuel_seed : 42  
-
-2. Model :  
-   > num_feat : 64 , Channel number of intermediate features.  
-   > growth_channel: 32 , Channels for each growth(dense connection).  
-   > num_block: 23 , number of RRDB blocks.  
-
-3. Dataloader :  
-   > train_batch_size : 4  
-   > test_batch_size: 1  
-   > num_workers: 4   
-
-4. Train :  
-   > epochs: 7  
-   > optim_g: {type: Adam, lr: 1e-4, betas: [0.9, 0.99]}  
-
-'''
-
-<br/><br/>
-
-## Code Descriptions
-1. DACON_AISR_TRIAL
-- EDSR, SRGAN, SWINIR
-
-
-2. DACON_AISR_BEST
-- RRDB, RRDB+(Self-ensemble)
 
