@@ -107,7 +107,9 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 - Deleting Validation columns : all the same value 
 - Clustering By Process
   > Identify characteristics of sample data and classify into clusters
+
   > Cluster numbers for 4 processes are reflected as features
+
   > Using KMeans clustering
 
 <br/>
@@ -116,12 +118,16 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 
 - Using boosting models
   > GradientBoostingRegressor
+
   > XGBRegressor
+
   > LGBMRegressor
+
   > CatBoostRegressor
 
 - Stacking
   > 1. Simply averaging the predictions for cloned model :  AveragingModels (best)
+
   > 2. Train the cloned meta-model using the out-of-fold predictions as new feature : StackingAveragedModels
 
 
@@ -138,7 +144,9 @@ CPU: Intel(R) Xeon(R) CPU @ 2.20GHz
 **4. Hyperparameter Tuning**
 - Optuna : to minimize RMSE
   > Simple and fast 
+
   > Parallel processing is possible
+
   > Equipped with various optimization algorithms of the latest trend.
 
 
