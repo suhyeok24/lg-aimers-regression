@@ -1,6 +1,6 @@
 # 🚘 자율주행 센서의 안테나 성능 예측 AI 경진대회 🚘
 
-![382223-PCPTQ3-433](https://user-images.githubusercontent.com/55012723/210489354-d39644e2-f938-4b35-97aa-8b4338a73a5c.jpg)
+<img src="https://user-images.githubusercontent.com/55012723/210489354-d39644e2-f938-4b35-97aa-8b4338a73a5c.jpg  width="200" height="400"/>
 
 Regression을 통한 예측 정확도를 극대화해보자!
 
